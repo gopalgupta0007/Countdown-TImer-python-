@@ -21,6 +21,7 @@ def incdaynum():
     dayInStrI = str(day).zfill(2)
     backColorGray.create_text(186, 330, text=dayInStrI,fill="#00FF00", font=fontstyletext)
  
+ 
 def inchournum():
     global hour
     hour += 1
