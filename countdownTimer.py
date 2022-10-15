@@ -15,6 +15,7 @@ againCall = 0
 
 
 def incdaynum():
+    """Increase one number of the time while clicking on the button of day"""
     global day
     day += 1
     backColorGray.create_oval(75,220,295,440, fill="#222222", outline="white", width=2.5)
@@ -23,6 +24,7 @@ def incdaynum():
  
  
 def inchournum():
+    """Increase one number of the time while clicking on the button of hour"""
     global hour
     hour += 1
     backColorGray.create_oval(395,220,615,440, fill="#222222", outline="white", width=2.5)
@@ -34,6 +36,7 @@ def inchournum():
     backColorGray.create_text(505, 330, text=hourInStrI,fill="#00FF00", font=fontstyletext)
 
 def incmintnum():
+    """Increase one number of the time while clicking on the button of minute"""
     global mint
     mint += 1
     backColorGray.create_oval(725,220,945,440, fill="#222222", outline="white", width=2.5)
@@ -45,6 +48,7 @@ def incmintnum():
     backColorGray.create_text(836, 330, text=mintInStrI,fill="#00FF00", font=fontstyletext)
 
 def incsendnum():
+    """Increase one number of the time while clicking on the button of second"""
     global secd
     secd += 1
     backColorGray.create_oval(1045,220,1265,440, fill="#222222", outline="white", width=2.5)
@@ -59,6 +63,7 @@ def incsendnum():
 
 
 def decdaynum():
+    """Decrease one number of the time while clicking on the button of day"""
     global day
     day -= 1
     backColorGray.create_oval(75,220,295,440, fill="#222222", outline="white", width=2.5)
@@ -68,6 +73,7 @@ def decdaynum():
         backColorGray.create_text(186, 330, text=dayInStrD,fill="#00FF00", font=fontstyletext)
  
 def dechournum():
+    """Decrease one number of the time while clicking on the button of hour"""
     global hour
     hour -= 1
     backColorGray.create_oval(395,220,615,440, fill="#222222", outline="white", width=2.5)
@@ -80,6 +86,7 @@ def dechournum():
     backColorGray.create_text(505, 330, text=hourInStrD,fill="#00FF00", font=fontstyletext)
 
 def decmintnum():
+    """Decrease one number of the time while clicking on the button of minute"""
     global mint
     backColorGray.create_oval(725,220,945,440, fill="#222222", outline="white", width=2.5)
     mint -= 1
@@ -92,6 +99,7 @@ def decmintnum():
     backColorGray.create_text(836, 330, text=mintInStrD,fill="#00FF00", font=fontstyletext)
 
 def decsendnum():
+    """Decrease one number of the time while clicking on the button of second"""
     global secd
     backColorGray.create_oval(1045,220,1265,440, fill="#222222", outline="white", width=2.5)
     secd -= 1
@@ -106,18 +114,20 @@ def decsendnum():
 
 
 def timeStop():
+    """stop the time while click stop button"""
     for t in range(10):
-        # if(startTime==True):break
         time.sleep(1)
         print("stoptime : ",t)
     return 0 
 
 def resetTime():
+    """it will doing reset the time(set all time = 0) while clicking the reset button"""
     global day, hour, mint, secd
     day, hour, mint, secd = 0, 0, 0, 0
 
 
 def countDown(day,hour, mint, secd):
+    """countdown timer function(Main): performing countdown on a given time."""
     global stopTime, againCall
     stopTime = False
     againCall = 0
@@ -200,7 +210,6 @@ if __name__=='__main__':
     backColorGray.create_text(1158, 150, text="Seconds",fill="#0DDEEF", font=("Ubuntu", 30, "bold"))
 
     startTime = Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='START',command = lambda: countDown(day,hour, mint, secd), bg="#0000ff").pack(side=BOTTOM, pady=100)
-    # Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='RESET',command = lambda: countDown(0, 0, 0, 0), bg="red").pack(side=RIGHT, pady=0)
     Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='RESET',command = lambda: countDown(0, 0, 0, 0), bg="red").place(x=450,y=540)
     Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='STOP',command = timeStop, bg="#1F9F1B").place(x=815,y=537)
 
