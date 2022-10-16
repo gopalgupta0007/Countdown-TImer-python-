@@ -2,6 +2,7 @@ import time
 from tkinter import *
 from tkinter.font import BOLD
 
+
 start = Tk()
 weightis = 1350
 heightis = 870
@@ -58,7 +59,6 @@ def incsendnum():
             if(secd<=60):break
     secdInStrI = str(secd).zfill(2)
     backColorGray.create_text(1156, 330, text=secdInStrI,fill="#00FF00", font=fontstyletext)
-
 
 
 
@@ -209,8 +209,11 @@ if __name__=='__main__':
     backColorGray.create_text(838, 150, text="Minutes",fill="#0DDEEF", font=("Ubuntu", 30, "bold"))
     backColorGray.create_text(1158, 150, text="Seconds",fill="#0DDEEF", font=("Ubuntu", 30, "bold"))
 
+    #startBtn
     startTime = Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='START',command = lambda: countDown(day,hour, mint, secd), bg="#0000ff").pack(side=BOTTOM, pady=100)
+    #resetBtn
     Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='RESET',command = lambda: countDown(0, 0, 0, 0), bg="red").place(x=450,y=540)
+    #stopBtn
     Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='STOP',command = timeStop, bg="#1F9F1B").place(x=815,y=537)
 
     start.mainloop()
