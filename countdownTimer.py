@@ -127,7 +127,7 @@ def resetTime():
 
 
 def countDown(day,hour, mint, secd):
-    """countdown timer function(Main): performing countdown on a given time."""
+    """countdown timer function(Main function): performing countdown on a given time."""
     global stopTime, againCall
     stopTime = False
     againCall = 0
