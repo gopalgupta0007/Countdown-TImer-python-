@@ -10,7 +10,6 @@ start.geometry(f"{weightis}x{heightis}")
 start.title("Countdown Timer")
 day, hour, mint, secd  = 0, 0, 0, 0
 fontstyletext = ("Ubuntu", 130, "bold")
-val = 'START'
 stopTime = False
 againCall = 0
 
@@ -115,10 +114,9 @@ def decsendnum():
 
 def timeStop():
     """stop the time while click stop button"""
-    for t in range(10):
+    for t in range(5):
         time.sleep(1)
         print("stoptime : ",t)
-    return 0 
 
 def resetTime():
     """it will doing reset the time(set all time = 0) while clicking the reset button"""
@@ -146,7 +144,7 @@ def countDown(day,hour, mint, secd):
                     backColorGray.create_oval(1045,220,1265,440, fill="#222222", outline="white", width=2.5)                    
                     backColorGray.create_text(1156, 330, text=str(secd).zfill(2),fill="#00FF00", font=fontstyletext)
                     backColorGray.update()   
-                    time.sleep(0.001)
+                    time.sleep(0.1)
                     print("hellow",secd)
                     if(timeStop == True):
                         timeStop()                        
@@ -209,11 +207,12 @@ if __name__=='__main__':
     backColorGray.create_text(838, 150, text="Minutes",fill="#0DDEEF", font=("Ubuntu", 30, "bold"))
     backColorGray.create_text(1158, 150, text="Seconds",fill="#0DDEEF", font=("Ubuntu", 30, "bold"))
 
-    #startBtn
-    startTime = Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='START',command = lambda: countDown(day,hour, mint, secd), bg="#0000ff").pack(side=BOTTOM, pady=100)
+
+    #StartBtn
+    Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='START',command = lambda: countDown(day,hour, mint, secd), bg="#1F9F1B").pack(side=BOTTOM, pady=100)
     #resetBtn
-    Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='RESET',command = lambda: countDown(0, 0, 0, 0), bg="red").place(x=450,y=540)
+    Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='RESET',command = lambda: countDown(0, 0, 0, 0), bg="#0000ff").place(x=450,y=540)
     #stopBtn
-    Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='STOP',command = timeStop, bg="#1F9F1B").place(x=815,y=537)
+    Button(backColorGray, fg="#ffffff",font=BOLD, width=10, height=5,text='STOP',command = timeStop, bg="red").place(x=815,y=537)
 
     start.mainloop()
