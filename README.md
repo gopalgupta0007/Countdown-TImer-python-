@@ -23,4 +23,8 @@ This is the output of the code...
 ![Do Change Before Run](https://user-images.githubusercontent.com/105534501/200102381-12c95d39-2ccc-42bc-8168-a769012d64a7.gif)
 
 
+<<<<<<< HEAD
 Before Run the code do some changes into the written code And then later on run the code and see amazing output
+=======
+Before Run the code do some changes into the written code And then later on run the code and see amazing output
+>>>>>>> 91ec7b13d8c1262cccf931095f8eb385c068fb0f
