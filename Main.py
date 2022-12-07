@@ -144,7 +144,7 @@ def countDown(day,hour, mint, secd):
                     backColorGray.create_oval(1045,220,1265,440, fill="#222222", outline="white", width=2.5)                    
                     backColorGray.create_text(1156, 330, text=str(secd).zfill(2),fill="#00FF00", font=fontstyletext)
                     backColorGray.update()   
-                    time.sleep(0.1)
+                    time.sleep(1)     #if you can want increase the speed of countdown so tha you can take much more smaller.
                     print("hellow",secd)
                     if(timeStop == True):
                         timeStop()                        
@@ -175,7 +175,7 @@ if __name__=='__main__':
 
     #upper button for increasing the value of number(setTime)
     '''add the upper button path in this file which is upsidekey.png'''
-    upIcon = PhotoImage(file=r"C:\\Users\\Kunal\\Desktop\\all intresting movies\\programming\\Python\\Countdown Timer\\upsidekey.png")
+    upIcon = PhotoImage(file=r"Images\\upsidekey.png")
     upIconImage = upIcon.subsample(1, 1)
     buttonDayI = Button(backColorGray, command=incdaynum, width=150,height=25, bg="#FFE400", fg="black", relief=FLAT, image=upIconImage, borderwidth=1)
     buttonHourI = Button(backColorGray, command=inchournum, width=150,height=25, bg="#FFE400", fg="black", relief=FLAT, image=upIconImage, borderwidth=1)
@@ -188,7 +188,7 @@ if __name__=='__main__':
 
     #upper button for increasing the value of number(setTime)
     '''add the down button path in this file which is downsidekey.png'''
-    downIcon = PhotoImage(file=r"C:\\Users\\Kunal\\Desktop\\all intresting movies\\programming\\Python\\Countdown Timer\\downsidekey.png")
+    downIcon = PhotoImage(file=r"Images\downsidekey.png")
     downIconImage = downIcon.subsample(1, 1)
     buttonDayD = Button(backColorGray,command=decdaynum, width=150,height=25, bg="#FFE400", fg="black", relief=FLAT, image=downIconImage, borderwidth=1)
     buttonHourD = Button(backColorGray,command=dechournum, width=150,height=25, bg="#FFE400", fg="black", relief=FLAT, image=downIconImage, borderwidth=1)
